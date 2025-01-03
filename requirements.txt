@@ -1,0 +1,12 @@
+# Linters, formatters, security checkers
+black==24.10.0
+isort<6
+mypy<2
+
+# Testing
+pytest<9
+pytest-cov<7
+
+# Build tools
+twine
+build

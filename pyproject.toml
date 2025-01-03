@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools_scm[toml]>=6.3.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "requests-verbose"
+description = "Convert requests.Response into a string representing an HTTP-request and its response"
+readme = "README.md"
+authors = [
+    {name = "Vitaly Samigullin", email = "vrs@pilosus.org"},
+]
+dynamic = ["version"]
+# TODO update once PEP-0639 is fully accepted and implemented by the build-backends
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Developers",
+    "Topic :: Internet :: WWW/HTTP",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "requests<3",
+]
+
+[project.urls]
+"Source code" = "https://github.com/pilosus/requests-verbose/"
+"Issue tracker" = "https://github.com/pilosus/requests-verbose/issues"
+
+[tool.setuptools_scm]
+write_to = "_version.py"
+
+[tool.isort]
+atomic = true
+line_length = 88
+skip_gitignore = true
+known_first_party = ["requests_verbose"]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+
+[tool.mypy]
+ignore_missing_imports = true
+follow_imports = "silent"
+strict_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_any_generics = true
+check_untyped_defs = true
+
+[tool.black]
+target-version = ["py39", "py310", "py311", "py312", "py313"]
+line-length = 88
