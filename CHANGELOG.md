@@ -14,5 +14,5 @@ Nothing here yet.
 
 - Basic functionality and packaging
 
-[Unreleased]: https://github.com/pilosus/dienstplan/compare/0.1.0...HEAD
-[0.1.0]: https://github.com/pilosus/dienstplan/compare/0.0.0...0.1.0
+[Unreleased]: https://github.com/pilosus/requests-verbose/compare/0.1.0...HEAD
+[0.1.0]: https://github.com/pilosus/requests-verbose/compare/0.0.0...0.1.0
