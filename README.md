@@ -1,7 +1,9 @@
+![PyPI - Version](https://img.shields.io/pypi/v/requests-verbose)
+
 # requests-verbose
 
 Convert [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response) object into a string 
-representing an HTTP request and response. It comes in handy when doing verbose debug-logging for requests.
+mimicking `curl --verbose` output. Useful for debugging of an HTTP request and its response.
 
 ## Install
 
@@ -15,7 +17,7 @@ pip install requests-verbose
 import requests
 from requests_verbose import http_str
 resp = requests.get("https://raw.githubusercontent.com/python/peps/refs/heads/main/peps/pep-0020.rst")
-print(http_str(resp, body_size_limit_bytes=0))
+print(http_str(resp))
 ```
 
 Results in:
@@ -57,7 +59,9 @@ https://raw.githubusercontent.com/python/peps/refs/heads/main/peps/pep-0020.rst 
 < Expires: Fri, 03 Jan 2025 20:43:52 GMT
 < Source-Age: 115
 
-<BODY EXCEEDS LIMIT> (size 1673 bytes, limit 0 bytes)
+PEP: 20
+Title: The Zen of Python
+<...>
 ```
 
 ## Help
@@ -69,16 +73,21 @@ help(http_str)
 
 ## Development
 
+- Open a GitHub Issue, ask a question first
+- Build and install locally:
+
 ```shell
-# 0. Open a GitHub Issue, ask a question first
-# 1. Build and install locally
 make dev
-# 2. Make changes
-# 3. Before commiting
-make format
-make check
-# 4. Commit and open a Pull Request
 ```
+
+- Make changes
+- Before commiting
+
+```shell
+make format
+```
+
+- Commit and open a Pull Request
 
 ## License
 
